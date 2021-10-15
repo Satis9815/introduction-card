@@ -1,79 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(#03a9f4,#03a9f4 50%,#fff 50%,#fff 100%);
+   
     min-height: 100vh;
-    flex-direction: column;
+    min-width: 100vw;
+    scroll-behavior: smooth;
 }
-.card{
-    position: relative;
-    width: 300px;
-    height: 400px;
-    background: #fff;
-    box-shadow: 0 15px 25px rgba(0,0,0,1);
-    border-radius: 10px;
-    background: rgba(255,255,255,0.1);
-    border-top: 1px solid rgba(255,255,255,0.5);
-    backdrop-filter: blur(15px);
+.font-family{
+  font-family: 'Oswald', sans-serif;
+  
 }
-.imgBox{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-    transform: translateY(30px) scale(0.5);
-    transform-origin: top;
 
+.navbar-brand{
+  font-size: 27px !important;
+  cursor: pointer;
+  color: #fff;
 }
-.imgBox img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+#navbarSupportedContent ul li a{
+  font-size: 27px;
+  cursor: pointer;
+  margin: 0px 10px;
+  color: #fff;
 }
-.content{
-    position: absolute;
+#navbarSupportedContent ul li a:hover{
+  color: #ee5684;
+ 
+}
+
+.introduction
+{
     height: 100%;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    padding-bottom: 30px;
+    text-align: center;
+    margin-top: 200px;
+  
 }
-.content .details{
+@keyframes boxImgRotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+.box img
+{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    animation-name: boxImgRotate;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+.introduction p
+{
+    font-family: cursive;
+    font-size: 18px;
+}
+.intro-para p{
+    margin: 0px 0px;
+}
+
+.container1{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
-.content .details h2{
-    color: #444;
-    font-size: 1.2em;
-    font-weight: 500;
-}
-.content .details h2 span{
-    font-size: 0.8em;
-    color:#03a9f4;
-    font-weight: 400;
+.container1 .serviceBox{
+    position: relative;
+    width: 350px;
+    height: 280px;
+    background: #51446e;
+    border-radius: 20px;
+    overflow: hidden;
 
 }
-.sci{
+.container1 .serviceBox .icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background:var(--i);
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.container1 .serviceBox:hover .icon{
+    top: 30px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.container1 .serviceBox .icon ion-icon{
+    font-size: 5em;
+    color: #fff;
+    transition: 0.5s;
+}
+.container1 .serviceBox:hover .icon ion-icon{
+    font-size: 2em;
+}
+.container1 .serviceBox .content{
+    position: relative;
+    margin-top: 100px;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    transform: scale(0);
+    transition: 0.5s;
+}
+.container1 .serviceBox:hover .content{
+    transform: scale(1);
+}
+.container1 .serviceBox .content h2{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.container1 .serviceBox .content p{
+    font-weight: 300;
+    line-height: 1.5em;
+}
+
+
+.manage{
+    width: 500px;
+}
+
+
+  
+
+
+/* ===== SKILLS =====*/
+.skills__container{
+    row-gap: 2rem;
+    text-align: center;
+    display: flex;
+  }
+  .skills__subtitle{
+    margin-bottom: 1rem;
+  }
+  .skills__text{
+    margin-bottom: 2rem;
+  }
+  .skills__data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 4px 25px rgba(14,36,49,.15);
+  }
+  .skills__icon{
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: #4070F4;
+  }
+  .skills__names{
+    display: flex;
+    align-items: center;
+  }
+  .skills__bar{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color:#4070F4;
+    height: .25rem;
+    border-radius: .5rem;
+    z-index: -10;
+  }
+  .skills__html{
+    width: 95%;
+  }
+  .skills__css{
+    width: 85%;
+  }
+  .skills__js{
+    width: 65%;
+  }
+  .skills__python{
+    width: 90%;
+  }
+  .skills__java{
+    width: 85%;
+  }
+  .skills__php{
+    width: 80%;
+  }
+  .skills__c{
+    width: 85%;
+  }
+  .image_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .skills__img{
+    border-radius: .5rem;
+    margin-left: 10px;
+    
+
+  }
+
+
+  .sci{
     position: relative;
     display: flex;
     margin-top: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    background: rebeccapurple;
+    color: #fff;
 
+}
+.sci p{
+  margin-bottom: 0px;
+  margin-right: 10px;
 }
 .sci li{
     list-style: none;
@@ -104,3 +270,35 @@ body{
     color:#03a9f4;
 }
 
+.footer{
+  margin-bottom: 0px !important;
+}
+  
+  @media screen and (max-width:1225px)
+{
+  .manage{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 28px;
+
+  }
+  .skills__container{
+
+    flex-wrap: wrap;
+    margin-left: 5px;
+  }
+  .skills__img{
+    height: 400px;
+    width: 359px;
+    margin-left: 0px;
+  }
+  .manage-details{
+    width: 177px;
+    margin-bottom: 0px
+  }
+  footer{
+    margin-top: 5px;
+  }
+}
